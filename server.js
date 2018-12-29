@@ -58,7 +58,7 @@ bcrypt.compare("veggies", '$2a$10$K29lvv9vwk/gVEsOCk13pe8AaVTMsUXqogx5rzEhfEmoMw
 })
 
 app.post('/register', (req, res) => {
-  const { email, name, password } = req.body;
+  const { email, name } = req.body;
 /*  bcrypt.hash(password, null, null, function(err, hash) {
     console.log(hash);
   }); */
@@ -66,7 +66,6 @@ app.post('/register', (req, res) => {
     id: '125',
     name: name,
     email: email,
-    password: password,
     entries: 0,
     joined: new Date()
   })
