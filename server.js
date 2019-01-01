@@ -51,7 +51,7 @@ bcrypt.compare("veggies", '$2a$10$K29lvv9vwk/gVEsOCk13pe8AaVTMsUXqogx5rzEhfEmoMw
 });
    if (req.body.email === database.users[0].email && 
        req.body.password === database.users[0].password) {
-      res.json('success!!!');
+      res.json(database.users[0]);
        } else {
          res.status(400).json('error logging in');
        }
@@ -59,9 +59,7 @@ bcrypt.compare("veggies", '$2a$10$K29lvv9vwk/gVEsOCk13pe8AaVTMsUXqogx5rzEhfEmoMw
 
 app.post('/register', (req, res) => {
   const { email, name } = req.body;
-/*  bcrypt.hash(password, null, null, function(err, hash) {
-    console.log(hash);
-  }); */
+
   database.users.push({
     id: '125',
     name: name,
